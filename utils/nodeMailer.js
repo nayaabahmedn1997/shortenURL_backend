@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 
 const sendActivationEmail = async (email, token) => {
-    const activationLink = `http://localhost:3000/activate-account/${token}`;
+    const activationLink = `https://urlguvi.netlify.app/activate-account/${token}`;
     await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: email,
@@ -23,7 +23,7 @@ const sendActivationEmail = async (email, token) => {
 };
 
 const forgotPasswordEmail = async (email, token)=>{
-    const activationLink = `http://localhost:3000/resetPassword/${token}`;
+    const activationLink = `https://urlguvi.netlify.app/resetPassword/${token}`;
 
     await transporter.sendMail({
         from: process.env.EMAIL_USER,
